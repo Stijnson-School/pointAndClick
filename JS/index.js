@@ -1,0 +1,1 @@
+document.getElementById("mainTitle").appendChild(document.createTextNode("Hello World!"));
