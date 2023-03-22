@@ -36,11 +36,12 @@ body{
   
   .Character{
       position: absolute;
+      margin: 100px 0 0 25px;
       z-index: 100;
   }
 
   .Character img{
-    width: 60px;
+    width: 35px;
   }
   
   .Foreground{
