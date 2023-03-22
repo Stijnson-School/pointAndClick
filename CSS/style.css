@@ -6,4 +6,53 @@
 
 body{
     background-color: rgb(40, 40, 65);
+    color: white;
+    display: grid;
+    grid-template-columns: auto 704px auto;
+    grid-template-rows: auto auto;
+    animation: all 1 ease-in-out;
+  }
+  
+  #mainTitle{
+      grid-column-start: 2;
+      grid-row-start: 1;
+      text-align: center;
+  }
+  
+  #gameWindow{
+    margin: 100px 0 0 0;
+    position: relative;
+    width: 704px;
+    height: 320px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    background-color: rgb(66, 66, 108);
 }
+  
+  .Background{
+      position: absolute;
+      z-index: 1;
+  }
+  
+  .Character{
+      position: absolute;
+      z-index: 100;
+  }
+
+  .Character img{
+    width: 60px;
+  }
+  
+  .Foreground{
+      position: absolute;
+      z-index: 1000;
+  }
+  
+ .Background img{
+    width: 704px;
+  }
+  
+  #mainCharacter{
+  top: 160px;
+  left: 392px;
+  }
