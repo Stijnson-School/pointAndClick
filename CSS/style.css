@@ -29,7 +29,16 @@ body{
     grid-column-start: 2;
     grid-row-start: 2;
     background-color: rgb(66, 66, 108);
-}
+  }
+
+  #clickMap-1{
+    background-color: rgba(255, 255, 255, 0.402);
+    position: absolute;
+    width: 530px;
+    height: 270px;
+    z-index: 1;
+    margin: 70px 0 0 30px;
+  }
   
   .Background{
       position: absolute;
@@ -38,12 +47,8 @@ body{
   
   .Character{
       position: absolute;
-      margin: 100px 0 0 25px;
       z-index: 100;
-  }
-
-  .Character img{
-    width: 35px;
+      scale: 2.5;
   }
   
   .Foreground{
@@ -56,6 +61,7 @@ body{
   }
   
   #mainCharacter{
-  top: 160px;
-  left: 392px;
+  top: 250px;
+  left: 395px;
+  transition: all 1s ease-in-out;
   }
