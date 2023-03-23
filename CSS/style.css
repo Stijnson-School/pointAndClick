@@ -14,6 +14,14 @@ body{
     animation: all 1 ease-in-out;
   }
   
+.notDragable{
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
   #mainTitle{
       grid-column-start: 2;
       grid-row-start: 1;
@@ -61,14 +69,15 @@ body{
       z-index: 1;
   }
   
-  .Character{
+  .character{
       position: absolute;
       z-index: 100;
       scale: 2.5;
   }
   
-  .Foreground{
+  .foreground{
       position: absolute;
+      background-color: white;
       z-index: 1000;
   }
   
@@ -80,4 +89,44 @@ body{
   top: 250px;
   left: 395px;
   transition: all 1s ease-in-out;
+  }
+
+  #tv-1{
+    width: 80px;
+    height: 50px;
+    top: 45px;
+    left: 410px;
+    opacity: 0;
+  }
+
+
+
+  .speech-bubble {
+    position: relative;
+    background: #ffffff;
+    border-radius: 60px;
+      padding: 2px 5px;
+      color: black;
+      font-size: 5px;
+      left: 8px;
+      top: -5px;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+  }
+  
+  .speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 0;
+    height: 0;
+    scale: 0.5;
+    border: 12px solid transparent;
+    border-top-color: #ffffff;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -6px;
+    margin-bottom: -7px;
   }

@@ -11,22 +11,27 @@
     <h1 id="mainTitle">Point & Click Adventure<br><br>-[  Women In The Kitchen  ]-</h1>
 
     <div id="gameWindow">
-        <!-- ForeGround -->
-        <div class="ForeGround" id="tileMap">
-
-        </div>
 
         <!-- Character -->
-        <div id="mainCharacter" class ="Character">
-            <img src="./IMG/character.gif" alt="">
+        <div id="mainCharacter" class ="character">
+            <div id="mainCharacterSpeech" class ="speech-bubble">
+                ....
+            </div>
+            <img class="notDragable" src="./IMG/character.gif" alt="">
         </div> 
         
         <!-- Background -->
         <div class="Background" id="tileMap">
-            <img src="./IMG/pointandclick tilemap.png" alt="tileMap1">
+            <img class="notDragable" src="./IMG/pointandclick tilemap.png" alt="tileMap1">
         </div>
 
-        <div id="clickMap">
+        <div id="clickMap" >
+            <!-- ForeGround -->
+            <div id="tv-1" class="foreground">
+                
+            </div>
+
+            <!-- Map -->
             <div class="clickMaps" id="clickMap-1"></div>
             <div class="clickMaps" id="clickMap-2"></div>
             <div class="clickMaps" id="clickMap-3"></div>
