@@ -1,7 +1,8 @@
 const mainCharacter = document.getElementById("mainCharacter");
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const gameWindow = document.getElementById("clickMap");
-const wall1 = document.getElementById("wall-1");
+
+const audioTrack = new Audio('./AUDIO/radio.mp3');
 
 
 const offsetCharacter = 16;
@@ -14,11 +15,18 @@ gameWindow.onclick = function(e){
     mainCharacter.style.top = `${y}px`;
 
     switch (e.target.id) {
-        case "tv-1":
+        case "tv":
             showSpeech("This is a beautiful TV!");
             break;
 
+        case "radio":
+            showSpeech("Lets dance on the radio music!");
+            audioTrack.play();
+            break;
+
         default:
+            audioTrack.pause();
+            audioTrack.currentTime = 0
             hideSpeech()
             break;
     }

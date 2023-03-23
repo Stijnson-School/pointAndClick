@@ -43,7 +43,7 @@ body{
     background-color: transparent;
     position: absolute;
     z-index: 1;
-    cursor: pointer;
+    cursor: help;
   }
 
   #clickMap-1{
@@ -91,14 +91,23 @@ body{
   transition: all 1s ease-in-out;
   }
 
-  #tv-1{
+  #tv{
     width: 80px;
     height: 50px;
     top: 45px;
     left: 410px;
     opacity: 0;
+    cursor: pointer;
   }
 
+  #radio{
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    left: 230px;
+    opacity: 0;
+    cursor: pointer;
+  }
 
 
   .speech-bubble {
