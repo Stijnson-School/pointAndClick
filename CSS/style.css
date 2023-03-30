@@ -166,6 +166,7 @@ body{
   #inventory{
     display: flex;
     position: absolute;
+    z-index: 100;
     bottom: -150px;
     left: 10px;
     transition: all 1s ease-in-out;
@@ -202,7 +203,7 @@ body{
 
   .items{
     position: absolute;
-    z-index: 1;
+    z-index: 10000;
   }
 
   .item{
@@ -213,6 +214,11 @@ body{
   .item img{
     width: 30px;
     height: 30px;
+  }
+
+  .item div{
+    width: 30px;
+    height: 40px;
   }
 
   #item-apple-1{
@@ -226,4 +232,17 @@ body{
 
   #item-strawberry-1{
     margin: 140px 0 0 20px;
+  }
+
+  #item-bowl-1{
+    margin: 160px 0 0 240px;
+  }
+
+  #item-makeFruitbowl{
+    margin: 90px 0 0 240px;
+  }
+
+  #item-fruitbowl{
+    margin: 120px 0 0 240px;
+    display: none;
   }

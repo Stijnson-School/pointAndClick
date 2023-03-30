@@ -46,6 +46,15 @@
                 <div class="item" id="item-apple-1" onclick="addInvItem('apple', 'item-apple-1')">
                     <img id="item-appleClick" src="./IMG/Inventory/apple.png">
                 </div>
+                <div class="item" id="item-bowl-1" onclick="addInvItem('bowl', 'item-bowl-1')">
+                    <img id="item-bowlClick" src="./IMG/Inventory/bowl.png">
+                </div>
+                <div class="item" id="item-makeFruitbowl">
+                    <div id="item-makeFruitbowlClick"></div>
+                </div>
+                <div class="item" id="item-fruitbowl" onclick="addInvItem('fruitbowl', 'item-fruitbowl')">
+                    <img id="item-fruitbowlClick" src="./IMG/Inventory/fruit-bowl.png">
+                </div>
             </div>
 
             <div class="items" id="items-upstairs">
@@ -60,12 +69,20 @@
 
         <div id="inventory" >
             <div class="inv-box" id="apple">
-                <img src="./IMG/Inventory/apple.png">
+                <img onclick="eatItem('apple')" style="cursor: pointer;" src="./IMG/Inventory/apple.png">
                 <p id="apple-count">0</p>
             </div>
             <div class="inv-box" id="strawberry">
-                <img src="./IMG/Inventory/strawberry.png">
+                <img onclick="eatItem('strawberry')" style="cursor: pointer;" src="./IMG/Inventory/strawberry.png">
                 <p id="strawberry-count">0</p>
+            </div>
+            <div class="inv-box" id="bowl">
+                <img style="cursor: default;" src="./IMG/Inventory/bowl.png">
+                <p id="bowl-count">0</p>
+            </div>
+            <div class="inv-box" id="fruitbowl">
+                <img onclick="eatItem('fruitbowl')" style="cursor: pointer;" src="./IMG/Inventory/fruit-bowl.png">
+                <p id="fruitbowl-count">0</p>
             </div>
         </div>
     </div>

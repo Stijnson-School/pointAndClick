@@ -3,9 +3,19 @@ const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const gameWindow = document.getElementById("clickMap");
 
 const audioTrack = new Audio('./AUDIO/radio.mp3');
-
+const eatTrack = new Audio('./AUDIO/eat.mp3');
 
 const offsetCharacter = 16;
+
+
+var inventory = {
+    apple: 0,
+    strawberry: 0,
+    bowl: 0,
+    fruitbowl: 0,
+}
+
+
 
 gameWindow.onclick = function(e){
     var rect = gameWindow.getBoundingClientRect();
@@ -41,10 +51,6 @@ gameWindow.onclick = function(e){
 
                     document.getElementById("items-downstairs").style.display = "none";
                     document.getElementById("items-upstairs").style.display = "block";
-
-                    setTimeout(function() {
-                        hideSpeech() 
-                    },2000);
                 },500);
             },1500);
               break;
@@ -65,10 +71,6 @@ gameWindow.onclick = function(e){
 
                     document.getElementById("items-downstairs").style.display = "block";
                     document.getElementById("items-upstairs").style.display = "none";
-
-                    setTimeout(function() {
-                        hideSpeech() 
-                    },2000);
                 },500);
             },1500);
               break;
@@ -78,29 +80,51 @@ gameWindow.onclick = function(e){
             showSpeech("OMG AN APPLE!");
             mainCharacter.style.left = "150px";
             mainCharacter.style.top = "190px";
-            setTimeout(function() {
-                hideSpeech()
-            },3000)
             break;
 
         case "item-appleClick2":
             showSpeech("OMG AN APPLE!");
             mainCharacter.style.left = "435px";
             mainCharacter.style.top = "220px";
-            setTimeout(function() {
-                hideSpeech()
-            },3000)
             break;
 
          case "item-strawberryClick":
             showSpeech("HMMM A STRAWBERRY!");
             mainCharacter.style.left = "76px";
             mainCharacter.style.top = "142px";
-            setTimeout(function() {
-                hideSpeech()
-            },3000)
             break;
 
+        case "item-bowlClick":
+            showSpeech("Ow nice a bowl.");
+            mainCharacter.style.left = "201px";
+            mainCharacter.style.top = "144px";
+            break;
+        case "item-fruitbowlClick":
+            showSpeech("OMG WE MADE IT!");
+            mainCharacter.style.left = "230px";
+            mainCharacter.style.top = "90px";
+            break;
+
+        case "item-makeFruitbowlClick":
+            console.log(inventory.bowl, inventory.apple, inventory.strawberry)
+            if (inventory.bowl > 0 && inventory.apple > 0 && inventory.strawberry > 0)
+            {
+                removeInvItem("bowl")
+                removeInvItem("apple")
+                removeInvItem("strawberry")
+                showSpeech("Making a fruit bowl...");
+
+                setTimeout(function() {
+                    showSpeech("Wohoo we made a fruit bowl!");
+                    document.getElementById("item-fruitbowl").style.display="block";
+                },5000)
+
+            } else {
+                showSpeech("I dont have enough ingredients.");
+            }
+            mainCharacter.style.left = "230px";
+            mainCharacter.style.top = "77px";
+            break;
 
         default:
             audioTrack.pause();
@@ -110,19 +134,21 @@ gameWindow.onclick = function(e){
     }
 }
 
-
-var inventory = {
-    consumables: {
-        apple: [0],
-        strawberry: [0],
-    },
+function eatItem(item)
+{
+    showSpeech("Hmmm");
+    eatTrack.play();
+    setTimeout(function() {
+        hideSpeech()
+    },2000)
+    removeInvItem(item)
 }
 
 function checkInventory(item)
 {
-    document.getElementById(item + "-count").innerText=parseInt(inventory.consumables[item]);
+    document.getElementById(item + "-count").innerText=parseInt(inventory[item]);
 
-    if (inventory.consumables[item] > 0){
+    if (inventory[item] > 0){
         document.getElementById(item).style.display = "block"
     } else {document.getElementById(item).style.display = "none"}
 }
@@ -130,7 +156,7 @@ function checkInventory(item)
 function addInvItem(item, itemId)
 {
     setTimeout(function() {
-        inventory.consumables[item] ++;
+        inventory[item] ++;
         checkInventory(item)
         document.getElementById(itemId).style.display = "none";
     },1 * 1000)
@@ -139,9 +165,10 @@ function addInvItem(item, itemId)
     },120 * 1000)
 }
 
-function removeInvItem()
+function removeInvItem(item)
 {
-    
+    inventory[item] --;
+    checkInventory(item)
 }
 
 function showSpeech(dialog)
