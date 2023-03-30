@@ -159,8 +159,71 @@ body{
     margin-bottom: -7px;
   }
 
-  #downstairs{}
-
   #upstairs{
     display: none;
+  }
+
+  #inventory{
+    display: flex;
+    position: absolute;
+    bottom: -150px;
+    left: 10px;
+    transition: all 1s ease-in-out;
+  }
+
+  .inv-box{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(31, 31, 31);
+    border-radius: 10px;
+    border: solid white;
+    margin-right: 10px;
+    display: none;
+  }
+
+  
+  .inv-box img{
+    width: 70px;
+    height: 70px;
+    margin:  0 auto;
+    display: flex;
+  }
+
+  .inv-box p{
+    float: left;
+    margin: -20px 8px;
+    font-size: 10px;
+    font-family: Impact, Arial;
+  }
+
+  #items-upstairs{
+    display: none;
+  }
+
+  .items{
+    position: absolute;
+    z-index: 1;
+  }
+
+  .item{
+    cursor: pointer;
+    position: absolute;
+  }
+
+  .item img{
+    width: 30px;
+    height: 30px;
+  }
+
+  #item-apple-1{
+    margin: 195px 0 0 100px;
+  }
+
+  
+  #item-apple-2{
+    margin: 240px 0 0 390px;
+  }
+
+  #item-strawberry-1{
+    margin: 140px 0 0 20px;
   }

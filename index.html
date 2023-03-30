@@ -33,14 +33,40 @@
                 <div id="up-stairs" class="foreground"></div>
             </div>
 
-        <div id="upstairs" >
-            <div id="down-stairs" class="foreground"></div>
-        </div>
+            <div id="upstairs" >
+                <div id="down-stairs" class="foreground"></div>
+            </div>
 
             <!-- Map -->
             <div class="clickMaps" id="clickMap-1"></div>
             <div class="clickMaps" id="clickMap-2"></div>
             <div class="clickMaps" id="clickMap-3"></div>
+
+            <div class="items" id="items-downstairs">
+                <div class="item" id="item-apple-1" onclick="addInvItem('apple', 'item-apple-1')">
+                    <img id="item-appleClick" src="./IMG/Inventory/apple.png">
+                </div>
+            </div>
+
+            <div class="items" id="items-upstairs">
+                <div class="item" id="item-apple-2" onclick="addInvItem('apple', 'item-apple-2')">
+                    <img id="item-appleClick2" src="./IMG/Inventory/apple.png">
+                </div>
+                <div class="item" id="item-strawberry-1" onclick="addInvItem('strawberry', 'item-strawberry-1')">
+                    <img id="item-strawberryClick" src="./IMG/Inventory/strawberry.png">
+                </div>
+            </div>
+        </div>
+
+        <div id="inventory" >
+            <div class="inv-box" id="apple">
+                <img src="./IMG/Inventory/apple.png">
+                <p id="apple-count">0</p>
+            </div>
+            <div class="inv-box" id="strawberry">
+                <img src="./IMG/Inventory/strawberry.png">
+                <p id="strawberry-count">0</p>
+            </div>
         </div>
     </div>
 
